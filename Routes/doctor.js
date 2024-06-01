@@ -11,8 +11,8 @@ import reviewRouter from "./review.js"; // using the concept of the nested routi
 router.use("/:doctorId/reviews",reviewRouter);
 
 router.get("/:id" ,authenticate,restrict(["doctor","admin","patient"]),getSingleDoctor); // dynamic router
-router.get("/",authenticate,restrict(["admin","doctor","patient"]),getAllDoctor);
-//router.get("/",getAllDoctor);
+//router.get("/",authenticate,restrict(["admin","doctor","patient"]),getAllDoctor);
+router.get("/",getAllDoctor);
 router.put("/:id",authenticate,restrict(["doctor","admin","patient"]),updateDoctor); // update doctor
 router.delete("/:id" ,authenticate,restrict(["doctor","admin","patient"]),deleteDoctor);
 router.get("/profiles/me",authenticate,restrict(["doctor","admin","patient"]),getDoctorProfile);
