@@ -14,8 +14,8 @@ export const getCheckoutSession = async (req, res) => {
     // cuurent booker user
     const user = await User.findById(req.userId);
     //create a session for the stripe
-    const domainURL = process.env.STRIPE_SECRET_KEY;
-    const  stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+    const domainURL = STRIPE_SECRET_KEY;
+    const  stripe = new Stripe(STRIPE_SECRET_KEY);
     //const stripe = new stripe(process.env.STRIPE_SECRET_KEY);
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],

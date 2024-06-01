@@ -24,7 +24,7 @@ export const authenticate=async(req,res,next)=>{
     {
         //console.log(authToken);
         const token=authToken.split(" ")[1]; // ACTUAL TOKEN VALUE
-        const decoded = jwt.verify(token,process.env.JWT_SECRET);
+        const decoded = jwt.verify(token,JWT_SECRET);
         // if token is valid we will get the id of the user
         req.userId=decoded.id;
         req.role=decoded.role;
