@@ -6,7 +6,7 @@ const JWT_SECRET='48b9f6c1a8d6b7b7115b650648271dee315ca3000f75e657572eb04e5ae836
 const STRIPE_SECRET_KEY='sk_test_51PFFNNSCY92SifIK3jhFRWFQLVxnvlgdLKPVCsMDw4mKMOyZZVzLxZWEfniCOHQ3OILepIqDpcDM1melLy0NC5Wz00KKAoHHgG'
 
 const generateToken = (user) => {
-    return jwt.sign({id:user._id, role:user.role},JWT_SECRET,{expiresIn:"15d"});
+    return jwt.sign({id:user._id, role:user.role},process.env.JWT_SECRET,{expiresIn:"15d"});
     
 }
 export const register = async (req, res) => {

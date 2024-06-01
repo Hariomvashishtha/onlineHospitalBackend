@@ -29,7 +29,7 @@ app.get("/testing",(req,res)=>{
  mongoose.set("strictQuery", false);
  const connectDb=async()=>{
     try{
-        await mongoose.connect(MONGO_URL
+        await mongoose.connect(process.env.MONGO_URL
             
         );
         console.log(" mongodb database connected successfully");
