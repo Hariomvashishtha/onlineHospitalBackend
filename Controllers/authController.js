@@ -2,9 +2,11 @@ import User from "../models/UserSchema.js";
 import Doctor from "../models/DoctorSchema.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+const JWT_SECRET='48b9f6c1a8d6b7b7115b650648271dee315ca3000f75e657572eb04e5ae836b388be83b7122ada41a63da65f0d76ef67c64c52728cd44935d72c9889a9a1832f'
+const STRIPE_SECRET_KEY='sk_test_51PFFNNSCY92SifIK3jhFRWFQLVxnvlgdLKPVCsMDw4mKMOyZZVzLxZWEfniCOHQ3OILepIqDpcDM1melLy0NC5Wz00KKAoHHgG'
 
 const generateToken = (user) => {
-    return jwt.sign({id:user._id, role:user.role},process.env.JWT_SECRET,{expiresIn:"15d"});
+    return jwt.sign({id:user._id, role:user.role},JWT_SECRET,{expiresIn:"15d"});
     
 }
 export const register = async (req, res) => {
