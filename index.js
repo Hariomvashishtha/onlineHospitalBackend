@@ -16,7 +16,8 @@ const corsOptions={
     origin:true, // any domain can access the server
 }
 
-app.get("/", (req, res) => {   
+app.get("/", (req, res) => { 
+    console.log("request came from frontend");  
     res.send("api is working");
  });    
 app.get("/testing",(req,res)=>{
