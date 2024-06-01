@@ -11,7 +11,7 @@ import bookingRoute from "./Routes/booking.js";
 const MONGO_URL="mongodb+srv://hs1957490:Nishu%402001@cluster0.qhlqz6y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 dotenv.config();
 const app=express();
-const port=8000;
+const port=process.env.PORT || 3000;
 const corsOptions={
     origin:true, // any domain can access the server
 }
@@ -49,7 +49,11 @@ app.get("/testing",(req,res)=>{
  app.use("/api/v1/doctors", doctorRoute);
  app.use("/api/v1/reviews", reviewRoute);
  app.use("/api/v1/bookings", bookingRoute);
- app.listen(port, () => {
+
+//  app.listen(port, "0.0.0.0", function () {
+//     // ...
+//   });
+ app.listen(port,"0.0.0.0", () => {
     connectDb();
     console.log(`server is running on port ${port}`);
  })
