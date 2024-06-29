@@ -6,15 +6,15 @@ export const createContactRequest = async (req, res) => {
     req.body.source="online Hospital website";
     if(req.fullName=="" || req.fullName==null || req.fullName==undefined)
     {
-        req.fullName="Anonymous name";
+        req.body.fullName="Anonymous name";
     }
     if(req.email=="" || req.email==null || req.email==undefined)
     {
-        req.email="Anonymous@gmail.com";
+        req.body.email="Anonymous@gmail.com";
     }
     if(req.mobileNumber=="" || req.mobileNumber==null || req.mobileNumber==undefined)
     {
-        req.mobileNumber="0000000000";
+        req.body.mobileNumber="0000000000";
     }
     const { fullName, email, mobileNumber, subject, message ,source} = req.body;
     const requestId = uuidv4(); // Generate a unique ID for the request
