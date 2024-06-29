@@ -4,15 +4,15 @@ import { v4 as uuidv4 } from 'uuid'; // Import uuidv4 function from uuid package
 
 export const createContactRequest = async (req, res) => {
     req.body.source="online Hospital website";
-    if(req.fullName=="" || req.fullName==null || req.fullName==undefined)
+    if(req.body.fullName=="" || req.body.fullName==null || req.body.fullName==undefined)
     {
         req.body.fullName="Anonymous name";
     }
-    if(req.email=="" || req.email==null || req.email==undefined)
+    if(req.body.email=="" || req.body.email==null || req.body.email==undefined)
     {
         req.body.email="Anonymous@gmail.com";
     }
-    if(req.mobileNumber=="" || req.mobileNumber==null || req.mobileNumber==undefined)
+    if(req.body.mobileNumber=="" || req.body.mobileNumber==null || req.body.mobileNumber==undefined)
     {
         req.body.mobileNumber="0000000000";
     }
