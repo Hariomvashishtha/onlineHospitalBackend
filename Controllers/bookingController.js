@@ -12,7 +12,11 @@ export const getCheckoutSession = async (req, res) => {
     
     const doctor = await Doctor.findById(req.params.doctorId);
     // cuurent booker user
-    const user = await User.findById(req.userId);
+    let user = await User.findById(req.userId) ;
+    if(!user)
+      {
+        user=await Doctor.findById(req.userId) ;
+      }
     //create a session for the stripe
     const domainURL = STRIPE_SECRET_KEY;
     const  stripe = new Stripe(STRIPE_SECRET_KEY);
