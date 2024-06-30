@@ -36,7 +36,7 @@ export const getCheckoutSession = async (req, res) => {
             unit_amount: (doctor.ticketPrice || 200) * 100,
             product_data: {
               name: doctor.name,
-              description: doctor.bio + "4242 4242 4242 4242 testing card deatils" || "bio testing 4242 4242 4242 4242 card deatils",
+              description:  "4242 4242 4242 4242 testing card deatils , other value can be anything ",
               images: [doctor.photo  || photo_default ],
             },
             
