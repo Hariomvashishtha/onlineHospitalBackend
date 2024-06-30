@@ -8,6 +8,6 @@ import { authenticate,restrict } from "../auth/verifyToken.js";
 // router.post("/",createReview);
 
 // WE HAVE TO KEEP THIS ROUTE FOR THE SOME SPECIFIC ROUTE OR SOME specific doctor 
-router.route("/").get(getAllReview).post(authenticate,restrict(["patient","admin"]),createReview);
+router.route("/").get(getAllReview).post(authenticate,restrict(["patient","admin","doctor"]),createReview);
 
 export default router;
